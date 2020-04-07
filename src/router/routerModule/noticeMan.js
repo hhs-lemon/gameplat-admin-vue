@@ -1,24 +1,25 @@
+import Layout from '@/views/layout/Layout';
 
 const noticeMan = {
-    path: "/access",
+    path: "/notice",
     icon: "key",
     name: "access",
     title: "公告管理",
-    redirect: "/access",
+    component: Layout,
     children: [
       {
-        path: "access",
+        path: "usernotice",
         icon: "key",
         title: "公告信息",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "UserNotice",
+        component: () => import('@/views/noticeMan/UserNotice')
       },
       {
-        path: "access",
+        path: "usermessage",
         icon: "key",
         title: "个人消息",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "UserMessage",
+        component: () => import('@/views/noticeMan/UserMessage')
       }
     ]
 }

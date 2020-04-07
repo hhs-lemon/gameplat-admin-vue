@@ -56,6 +56,7 @@
     },
     computed: {
       pageTagsList() {
+        console.log(this.$store.state.app.pageOpenedList, '9999999')
         return this.$store.state.app.pageOpenedList; // 打开的页面的页面对象
       },
       ...mapGetters([

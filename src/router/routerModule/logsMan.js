@@ -1,24 +1,25 @@
+import Layout from '@/views/layout/Layout';
 
 const logsMan = {
-    path: "/access",
+    path: "/logs",
     icon: "key",
     name: "access",
     title: "日志管理",
-    redirect: "/access",
+    component: Layout,
     children: [
       {
-        path: "access",
+        path: "userlogin",
         icon: "key",
         title: "登录日志",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "UserLogin",
+        component: () => import('@/views/logsMan/UserLogin')
       },
       {
-        path: "access",
+        path: "operate",
         icon: "key",
         title: "操作日志",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "OperateLog",
+        component: () => import('@/views/logsMan/OperateLog')
       },
 
     ]

@@ -1,47 +1,47 @@
-
+import Layout from '@/views/layout/Layout';
 
 const promotions = {
-    path: "/access",
+    path: "/activity",
     icon: "key",
     name: "access",
     title: "优惠活动",
-    redirect: "/access",
+    component: Layout,
     children: [
       {
-        path: "access",
+        path: "config",
         icon: "key",
         title: "参数设置",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "ActivityConfig",
+        component: () => import('@/views/promotions/ActivityConfig')
       },
       {
-        path: "access",
+        path: "manage",
         icon: "key",
         title: "活动管理",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "ActivityMange",
+        component: () => import('@/views/promotions/ActivityManage')
       },
-      {
-        path: "access",
-        icon: "key",
-        title: "规则管理",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
-      },
-      {
-        path: "access",
-        icon: "key",
-        title: "资格管理",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
-      },
-      {
-        path: "access",
-        icon: "key",
-        title: "活动派奖",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
-      }
+      // {
+      //   path: "access",
+      //   icon: "key",
+      //   title: "规则管理",
+      //   name: "accessAccess",
+      //   component: () => import('@/views/access/access')
+      // },
+      // {
+      //   path: "access",
+      //   icon: "key",
+      //   title: "资格管理",
+      //   name: "accessAccess",
+      //   component: () => import('@/views/access/access')
+      // },
+      // {
+      //   path: "access",
+      //   icon: "key",
+      //   title: "活动派奖",
+      //   name: "accessAccess",
+      //   component: () => import('@/views/access/access')
+      // }
     ]
 }
 

@@ -1,82 +1,81 @@
-
+import Layout from '@/views/layout/Layout';
 const management = {
-    path: '/dashboard',
+    path: '/live',
+    component: Layout,
     icon: "speedometer",
-    redirect: 'noRedirect',
     title: '真人管理',
-    name: 'dashboard',
-    redirect: "/dashboard/index1",
+    name: 'Live',
     children: [
         {
-        path: "index1",
+        path: "dayreport",
         icon: "speedometer",
         title: "投注日报表",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
+        name: "LiveDayReport",
+        component: () => import('@/views/liveMan/DayReport')
         },
         {
-        path: "index1",
+        path: "betrecord",
         icon: "speedometer",
         title: "真人投注记录",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
+        name: "BetRecord",
+        component: () => import('@/views/liveMan/BetRecord')
         },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "返点配置",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "期数配置",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "返点统计",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "额度补发",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "额度回收",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "真人黑名单管理",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "真人游戏开关",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        },
-        {
-        path: "index1",
-        icon: "speedometer",
-        title: "真人游戏管理",
-        name: "home index",
-        component: () => import('@/views/dashboard/index1')
-        }
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "返点配置",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // },
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "期数配置",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // },
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "返点统计",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // },
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "额度补发",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // },
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "额度回收",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // },
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "真人黑名单管理",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // },
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "真人游戏开关",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // },
+        // {
+        // path: "index1",
+        // icon: "speedometer",
+        // title: "真人游戏管理",
+        // name: "home index",
+        // component: () => import('@/views/dashboard/index1')
+        // }
 
     ]
 
