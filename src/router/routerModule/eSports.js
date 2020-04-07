@@ -1,47 +1,46 @@
-
+import Layout from '@/views/layout/Layout';
 const eSports = {
-    path: "/access",
+    path: "/esports",
     icon: "key",
     name: "access",
     title: "电子竞技",
-    redirect: "/access",
-    // hidden: true,
+    component: Layout,
     children: [
       {
-        path: "access",
+        path: "order",
         icon: "key",
         title: "注单查询",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "Order",
+        component: () => import('@/views/esportsMan/Order')
       },
       {
-        path: "access",
+        path: "betconfig",
         icon: "key",
         title: "投注设置",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
+        name: "BetConfig",
+        component: () => import('@/views/esportsMan/BetConfig')
       },
-      {
-        path: "access",
-        icon: "key",
-        title: "即时注单",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
-      },
-      {
-        path: "access",
-        icon: "key",
-        title: "单用户投注限制",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
-      },
-      {
-        path: "access",
-        icon: "key",
-        title: "用户盈利报表",
-        name: "accessAccess",
-        component: () => import('@/views/access/access')
-      }
+      // {
+      //   path: "access",
+      //   icon: "key",
+      //   title: "即时注单",
+      //   name: "accessAccess",
+      //   component: () => import('@/views/access/access')
+      // },
+      // {
+      //   path: "access",
+      //   icon: "key",
+      //   title: "单用户投注限制",
+      //   name: "accessAccess",
+      //   component: () => import('@/views/access/access')
+      // },
+      // {
+      //   path: "access",
+      //   icon: "key",
+      //   title: "用户盈利报表",
+      //   name: "accessAccess",
+      //   component: () => import('@/views/access/access')
+      // }
     ]
 }
 
