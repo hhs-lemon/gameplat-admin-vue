@@ -20,6 +20,27 @@ const promotions = {
         title: "活动管理",
         name: "accessAccess",
         component: () => import('@/views/access/access')
+      },
+      {
+        path: "access",
+        icon: "key",
+        title: "规则管理",
+        name: "accessAccess",
+        component: () => import('@/views/access/access')
+      },
+      {
+        path: "access",
+        icon: "key",
+        title: "资格管理",
+        name: "accessAccess",
+        component: () => import('@/views/access/access')
+      },
+      {
+        path: "access",
+        icon: "key",
+        title: "活动派奖",
+        name: "accessAccess",
+        component: () => import('@/views/access/access')
       }
     ]
 }

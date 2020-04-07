@@ -10,68 +10,76 @@ const management = {
         {
         path: "index1",
         icon: "speedometer",
-        title: "分组管理",
+        title: "投注日报表",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "真人投注记录",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "返点配置",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "期数配置",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "返点统计",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "额度补发",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "额度回收",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "真人黑名单管理",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "真人游戏开关",
+        name: "home index",
+        component: () => import('@/views/dashboard/index1')
+        },
+        {
+        path: "index1",
+        icon: "speedometer",
+        title: "真人游戏管理",
         name: "home index",
         component: () => import('@/views/dashboard/index1')
         }
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "限制信息配置",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // },
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "会员ip黑名单配置",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // },
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "版本记录",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // },
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "身份验证器配置",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // },
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "系统配置",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // },
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "监控",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // },
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "公众号配置",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // },
-        // {
-        // path: "home",
-        // icon: "speedometer",
-        // title: "微信推广配置",
-        // name: "home index",
-        // component: () => import('@/views/home/home')
-        // }
+
     ]
-    
+
 }
 
 export default management

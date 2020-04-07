@@ -12,7 +12,15 @@ const logsMan = {
         title: "登录日志",
         name: "accessAccess",
         component: () => import('@/views/access/access')
-      }
+      },
+      {
+        path: "access",
+        icon: "key",
+        title: "操作日志",
+        name: "accessAccess",
+        component: () => import('@/views/access/access')
+      },
+
     ]
 }
 

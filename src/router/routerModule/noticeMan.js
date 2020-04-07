@@ -12,6 +12,13 @@ const noticeMan = {
         title: "公告信息",
         name: "accessAccess",
         component: () => import('@/views/access/access')
+      },
+      {
+        path: "access",
+        icon: "key",
+        title: "个人消息",
+        name: "accessAccess",
+        component: () => import('@/views/access/access')
       }
     ]
 }

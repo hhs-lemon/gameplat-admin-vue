@@ -13,6 +13,20 @@ const chatRoomMan = {
         title: "聊天室成员管理",
         name: "accessAccess",
         component: () => import('@/views/access/access')
+      },
+      {
+        path: "access",
+        icon: "key",
+        title: "聊天室房间管理",
+        name: "accessAccess",
+        component: () => import('@/views/access/access')
+      },
+      {
+        path: "access",
+        icon: "key",
+        title: "聊天室红包配置",
+        name: "accessAccess",
+        component: () => import('@/views/access/access')
       }
     ]
 }

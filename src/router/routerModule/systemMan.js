@@ -70,7 +70,36 @@ const management = {
         title: "微信推广配置",
         name: "home index",
         component: () => import('@/views/home/home')
-        }
+        },
+        {
+        path: "home",
+        icon: "speedometer",
+        title: "推广域名配置",
+        name: "home index",
+        component: () => import('@/views/home/home')
+        },
+        {
+        path: "home",
+        icon: "speedometer",
+        title: "IP白名单",
+        name: "home index",
+        component: () => import('@/views/home/home')
+        },
+        {
+        path: "home",
+        icon: "speedometer",
+        title: "银行卡黑名单",
+        name: "home index",
+        component: () => import('@/views/home/home')
+        },
+        {
+        path: "home",
+        icon: "speedometer",
+        title: "网络检测",
+        name: "home index",
+        component: () => import('@/views/home/home')
+        },
+
     ]
 
 }
