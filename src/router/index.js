@@ -17,6 +17,23 @@ Vue.use(Router)
  * noDropdown : if `noDropdown:true` will not has submenu in the sidebar
  * meta : `{ role: ['admin'] }`  will control the page role
  **/
+import SystemMan from './routerModule/systemMan'
+import LiveMan from './routerModule/liveMan'
+import Promotions from './routerModule/promotions'
+import LotteryMan from './routerModule/lotteryMan'
+import SportsMan from './routerModule/sportsMan'
+import ESports from './routerModule/eSports'
+import CashSystem from './routerModule/cashSystem'
+import UsersMan from './routerModule/usersMan'
+import PaymentConfig from './routerModule/paymentConfig'
+import ChatRoomMan from './routerModule/chatRoomMan'
+import NoticeMan from './routerModule/noticeMan'
+import LogsMan from './routerModule/logsMan'
+import ReportMan from './routerModule/reportMan'
+import DividendMan from './routerModule/dividendMan'
+
+
+
 export const constantRouterMap = [
   {
     path: '/login',
@@ -38,10 +55,27 @@ export const constantRouterMap = [
     children: [{path: 'home', title: 'home', name: 'home_index', component: _import('home/home')}]
   }
 ];
+
 //默认控件
 const defaultComponent = Layout;
 //路由数据
-export const otherRouterMap = initRouter(require('./router.json'));
+// export const otherRouterMap = initRouter(require('../router/router.json'));
+export const otherRouterMap = [
+  SystemMan,
+  LiveMan,
+  Promotions,
+  LotteryMan,
+  SportsMan,
+  ESports,
+  CashSystem,
+  UsersMan,
+  PaymentConfig,
+  ChatRoomMan,
+  NoticeMan,
+  LogsMan,
+  ReportMan,
+  DividendMan
+]
 
 /**
  * 初始化路由
@@ -75,7 +109,8 @@ export default new Router({
   scrollBehavior: () => ({y: 0}),
   routes: [
     ...constantRouterMap,
-    ...otherRouterMap]
+    ...otherRouterMap
+  ]
 })
 
 

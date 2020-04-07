@@ -1,18 +1,18 @@
 <template>
 
   <div>
-    <el-row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
             <Form-item prop="user">
               <Input type="text" v-model="formInline.user" placeholder="Username">
-                <i class="el-icon-platform-eleme"/>
+              <Icon type="ios-person-outline" slot="prepend"></Icon>
               </Input>
             </Form-item>
             <Form-item prop="password">
               <Input type="password" v-model="formInline.password" placeholder="Password">
-                <i class="el-icon-platform-eleme"/>
+              <Icon type="ios-locked-outline" slot="prepend"></Icon>
               </Input>
             </Form-item>
             <Form-item>
@@ -25,8 +25,8 @@
           <p>设置属性 inline，表单元素可以水平排列。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Form :model="formItem" :label-width="80">
@@ -85,8 +85,8 @@
           <p>给 Form-item 设置属性 label 可以显示表单域的标签，需要给 Form 设置 label-width。 </p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Form :model="formLeft" label-position="left" :label-width="100">
@@ -128,8 +128,8 @@
           <p>设置属性 label-position，可以改变表单域标签的位置，left 为左对齐，right 为右对齐，top 会置于表单域顶部</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
@@ -147,7 +147,7 @@
               </Select>
             </Form-item>
             <Form-item label="选择日期">
-              <el-row>
+              <Row>
                 <Col span="11">
                   <Form-item prop="date">
                     <Date-picker type="date" placeholder="选择日期"
@@ -161,7 +161,7 @@
                                  v-model="formValidate.time"></Time-picker>
                   </Form-item>
                 </Col>
-              </el-row>
+              </Row>
             </Form-item>
             <Form-item label="性别" prop="gender">
               <Radio-group v-model="formValidate.gender">
@@ -193,8 +193,8 @@
           <p>Form 组件基于 async-validator 实现的数据验证，给 Form 设置属性 rules，同时给需要验证的 Form-item 设置属性 prop 指向对应字段即可。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Form ref="formDynamic" :model="formDynamic" :label-width="80">
@@ -209,9 +209,9 @@
               <Button type="ghost" @click="handleRemove(index)" size='small'>删除</Button>
             </Form-item>
             <Form-item>
-              <el-row>
+              <Row>
                 <Button type="dashed" long @click="handleAdd" icon="plus-round">新增</Button>
-              </el-row>
+              </Row>
             </Form-item>
             <Form-item>
               <Button type="primary" @click="handleSubmit('formDynamic')">提交</Button>
@@ -228,7 +228,7 @@
 
         <!--</div>-->
       </Col>
-    </el-row>
+    </Row>
   </div>
 </template>
 <script>

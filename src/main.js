@@ -2,9 +2,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import elementUI from 'element-ui'
+import iView from 'iview'
 import particles from 'particles.js'
 // import 'iview/src/styles/index.less'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import NProgress from 'nprogress'; // Progress 进度条
 import 'nprogress/nprogress.css';// Progress 进度条 样式
 import 'normalize.css/normalize.css';// normalize.css 样式格式化
@@ -13,8 +15,9 @@ import 'normalize.css/normalize.css';// normalize.css 样式格式化
 // import echarts from 'echarts'
 // Vue.prototype.$echarts = echarts;
 
-Vue.use(elementUI);
-Vue.use(particles);
+Vue.use(iView);
+Vue.use(ElementUI);
+Vue.use(particles)
 NProgress.configure({});
 Vue.config.productionTip = false;
 
@@ -51,4 +54,4 @@ new Vue({
   store,
   template: '<App/>',
   components: { App }
-});
+})

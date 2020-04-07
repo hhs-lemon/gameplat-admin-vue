@@ -1,14 +1,15 @@
-<style lang="scss">
-    @import '../../styles/common.scss';
-    @import './components/table.scss';
+<style lang="less">
+    @import '../../styles/common.less';
+    @import './components/table.less';
 </style>
 
 <template>
     <div>
-        <el-row>
+        <Row>
             <Col span="6">
                 <Card>
                     <p slot="title">
+                        <Icon type="load-b"></Icon>
                         简单说明
                     </p>
                     <div class="edittable-test-con">
@@ -23,11 +24,12 @@
                     </div>
                 </Card>
             </Col>
-        </el-row>
-        <el-row class="margin-top-10">
+        </Row>
+        <Row class="margin-top-10">
             <Col span="12">
                 <Card>
                     <p slot="title">
+                        <Icon type="android-remove"></Icon>
                         可编辑单元行
                     </p>
                     <div class="edittable-table-height-con">
@@ -38,6 +40,7 @@
             <Col span="12" class="padding-left-10">
                 <Card>
                     <p slot="title">
+                        <Icon type="android-more-horizontal"></Icon>
                         可编辑单元格(鼠标移入显示编辑单元格按钮)
                     </p>
                     <div class="edittable-table-height-con">
@@ -45,27 +48,28 @@
                     </div>
                 </Card>
             </Col>
-        </el-row>
-        <el-row class="margin-top-10">
+        </Row>
+        <Row class="margin-top-10">
             <Col span="24">
                 <Card>
                     <p slot="title">
+                        <Icon type="ios-keypad"></Icon>
                          单元行和单元格两种方式编辑(始终显示编辑单元格按钮)
                     </p>
-                    <el-row :gutter="10">
+                    <Row :gutter="10">
                         <Col span="2">
-                            <el-row type="flex" justify="center" align="middle" class="edittable-table-get-currentdata-con">
+                            <Row type="flex" justify="center" align="middle" class="edittable-table-get-currentdata-con">
                                 <Button type="primary" @click="getCurrentData">当前数据</Button>
-                            </el-row>
+                            </Row>
                         </Col>
                         <Col span="22">
                             <div class="edittable-table-height-con">
-                                <can-edit-table
-                                    refs="table4"
-                                    v-model="editInlineAndCellData"
-                                    @on-cell-change="handleCellChange"
-                                    @on-change="handleChange"
-                                    :editIncell="true"
+                                <can-edit-table 
+                                    refs="table4" 
+                                    v-model="editInlineAndCellData" 
+                                    @on-cell-change="handleCellChange" 
+                                    @on-change="handleChange"  
+                                    :editIncell="true" 
                                     :columns-list="editInlineAndCellColumn"
                                 ></can-edit-table>
                             </div>
@@ -73,10 +77,10 @@
                         <Modal :width="900" v-model="showCurrentTableData">
                             <can-edit-table refs="table5" v-model="editInlineAndCellData" :columns-list="showCurrentColumns"></can-edit-table>
                         </Modal>
-                    </el-row>
+                    </Row>
                 </Card>
             </Col>
-        </el-row>
+        </Row>
     </div>
 </template>
 

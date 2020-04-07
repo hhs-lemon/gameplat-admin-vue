@@ -1,7 +1,7 @@
 <template>
   <div class="animated fadeIn">
 
-  <el-row>
+  <Row>
         <Col span="24" >
              <div  class="doc-header">
   <Alert show-icon>消息提示文案</Alert>
@@ -30,7 +30,7 @@
     </Alert>
     <Alert show-icon>
         自定义图标
-      <i class="el-icon-platform-eleme"/>
+        <Icon type="ios-lightbulb-outline" slot="icon"></Icon>
         <template slot="desc">自定义图标文案自定义图标文案自定义图标文案自定义图标文案自定义图标文案</template>
     </Alert>
             </div>
@@ -42,7 +42,7 @@
 
 
 
-    </el-row>
+    </Row>
 
 
 

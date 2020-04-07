@@ -1,8 +1,7 @@
 <template>
   <div class="main" :class="{'main-hide-text': sidebar}">
     <div class="sidebar-menu-con"
-         :style="{width: sidebar?closeSidebarWidth:openSidebarWidth, overflow: sidebar ? 'visible' : 'auto',
-         background: menuTheme === 'dark'?'#495060':'white'}">
+         :style="{width: sidebar?closeSidebarWidth:openSidebarWidth, overflow: sidebar ? 'visible' : 'auto', background: menuTheme === 'dark'?'#495060':'white'}">
       <Sidebar ref="sidebar"/>
     </div>
     <!--顶部布局 :style="{paddingLeft: sidebar?closeSidebarWidth:openSidebarWidth}"-->
@@ -12,13 +11,13 @@
     </div>
     <div class="single-page-con" :style="{left: sidebar?closeSidebarWidth:openSidebarWidth}">
       <div class="tags-con" >
-        <tagsOpened @on-select="selectMenu" :pageTagsList="pageTagsList"/>
+        <tagsOpened  @select="selectMenu" :pageTagsList="pageTagsList"></tagsOpened>
       </div>
 
       <div class="single-page">
         <!--根据菜单展示内容-->
         <keep-alive>
-          <router-view/>
+          <router-view></router-view>
         </keep-alive>
       </div>
       <Bottom/>
@@ -75,6 +74,7 @@
       },
       //导航栏选择菜单时回调
       selectMenu(name) {
+        console.log('name', name)
         this.$refs.sidebar.changeNavMenu(name);
         this.menuActive = name;
       }
@@ -88,11 +88,13 @@
       this.changePathArr(this.$route.name);
       //初始化导航
       this.selectMenu(this.$route.path.split('/')[1])
+      console.log('000: ',this.$route);
+
     }
   }
 </script>
 
-<style lang="scss">
+<style lang="less">
   .maxlogo {
     padding-right: 1em;
   }

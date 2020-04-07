@@ -1,6 +1,6 @@
 <template>
     <div style="margin-top: 20px;margin-left: 10px;" class="animated fadeIn">
-        <el-row>
+        <Row>
             <Col span="24">
                 <div class="doc-header">
 
@@ -16,8 +16,8 @@
                     <p> 基本用法，组件会根据current自动判断各步骤状态</p>
                 </div>
             </Col>
-        </el-row>
-        <el-row>
+        </Row>
+        <Row>
             <Col span="24">
                 <div class="doc-header">
                     <Steps :current="1">
@@ -31,8 +31,8 @@
                     <p> 通过设置Step的icon属性可以自定义图标。</p>
                 </div>
             </Col>
-        </el-row>
-        <el-row>
+        </Row>
+        <Row>
             <Col span="24">
                 <div class="doc-header">
                     <Steps :current="2" direction="vertical">
@@ -47,8 +47,8 @@
                     <p> 设置属性direction为vertical在垂直方向展示。</p>
                 </div>
             </Col>
-        </el-row>
-        <el-row>
+        </Row>
+        <Row>
             <Col span="24">
                 <div class="doc-header">
                     <Steps :current="1" status="error">
@@ -63,7 +63,7 @@
                     <p> 设置Steps的属性status为error指定当前步骤状态。</p>
                 </div>
             </Col>
-        </el-row>
+        </Row>
     </div>
 </template>
 <script>

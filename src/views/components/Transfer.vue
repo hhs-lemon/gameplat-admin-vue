@@ -1,6 +1,6 @@
 <template>
   <div style="margin-top: 20px;margin-left: 10px;" class="animated fadeIn">
-    <el-row>
+    <Row>
       <Col span="24">
         <div class="doc-header">
 
@@ -15,8 +15,8 @@
           <p> 基本用法，展示了 data、target-keys、每行的渲染函数 render-format 以及回调函数 on-change 的用法</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div class="doc-header">
           <Transfer
@@ -37,7 +37,7 @@
           <p> 穿梭框高级用法，可以自定义两列的宽高、操作文案，以及底部自定义操作，更多配置见 API。 </p>
         </div>
       </Col>
-    </el-row>
+    </Row>
   </div>
 </template>
 <script>

@@ -1,12 +1,12 @@
 <template>
 
   <div class="switch-theme-con">
-    <el-row class="switch-theme" type="flex" justify="center" align="middle">
+    <Row class="switch-theme" type="flex" justify="center" align="middle">
         <a @click="setTheme">
-
-          <i class="el-icon-platform-eleme"/>
+          <Icon :style="{marginTop: '-2px', verticalAlign: 'middle'}" color="#495060" :size="18"
+                type="paintbucket"></Icon>
         </a>
-    </el-row>
+    </Row>
   </div>
 </template>
 <script>

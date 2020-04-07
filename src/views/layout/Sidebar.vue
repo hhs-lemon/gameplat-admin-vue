@@ -6,43 +6,44 @@
       &lt;!&ndash;菜单收起时左侧显示的图片&ndash;&gt;
       <a @click="herfchange" v-show="sidebar"><img src="../../assets/leopard.png"/></a>
     </div>-->
-    <el-menu :default-active="this.$route.path" v-if="!sidebar" ref="sideMenu" :active-name="$route.path" :theme="menuTheme" :open-names="openedSubmenuArr"
+    <Menu v-if="!sidebar" ref="sideMenu" :active-name="$route.path" :theme="menuTheme" :open-names="openedSubmenuArr"
           width="auto" @on-select="changeMenu">
       <template v-for="item in permission_routers"
                 v-if="!item.hidden && item.children.length>0 && item.path.split('/')[1] === menu">
         <!--有二级菜单的设置路由-->
         <template v-for="child in item.children">
           <!--设置下面的二级菜单显示-->
-          <el-menu-item :name="item.path+'/'+child.path" :key="child.name+'1'">
-            <i class="el-icon-platform-eleme"/>
+          <MenuItem :name="item.path+'/'+child.path" :key="child.name">
+            <Icon :type="child.icon" :size="iconSize" :key="child.name"></Icon>
             <span class="layout-text" :key="child.name">{{ child.title }}</span>
-          </el-menu-item>
+          </MenuItem>
         </template>
       </template>
-    </el-menu>
+    </Menu>
     <div v-else-if="sidebar" class="shrink">
       <template v-for="(item,index) in permission_routers"
                 v-if="!item.hidden && item.children.length>0 && item.path.split('/')[1] === menu">
         <!--只展示选择的那个一级菜单的二级菜单-->
         <!--有二级菜单的展示-->
-        <!--<el-dropdown transfer v-if="item.children.length !== 0" placement="right-start" :key="index+'1'"
+        <Dropdown transfer v-if="item.children.length !== 0" placement="right-start" :key="index"
                   @on-click="changeMenu">
-        </el-dropdown>-->
+        </Dropdown>
         <template v-for="(child, i) in item.children">
-          <el-dropdown transfer v-if="item.children.length !== 0" placement="right-start" :key="index"
+          <Dropdown transfer v-if="item.children.length !== 0" placement="right-start" :key="index"
                     @on-click="changeMenu">
-            <el-dropdown-menu> <router-link tag='span' :to="item.path+'/'+child.path"
+            <router-link tag='span' :to="item.path+'/'+child.path"
                          style="display: inline-block;height:100%;width:100%">
               <Button class="shrinkbutton" type="text">
-                <i class="el-icon-platform-eleme"/>
+                <Icon :size="20" :color="iconColor" :type="child.icon"/>
               </Button>
-            </router-link></el-dropdown-menu>
-            <el-dropdown-menu class="shrinkdropdownMenu" slot="list">
-              <el-dropdown-menu :name="item.path+'/'+child.path" :key="i">
+            </router-link>
+            <DropdownMenu class="shrinkdropdownMenu" slot="list">
+              <DropdownItem :name="item.path+'/'+child.path" :key="i">
+                <Icon :type="child.icon"/>
                 <span class="dropdownItemIcon">{{ child.title }}</span>
-              </el-dropdown-menu>
-            </el-dropdown-menu>
-          </el-dropdown>
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </template>
       </template>
     </div>
@@ -79,6 +80,8 @@
     methods: {
       changeMenu(active) {
         this.$router.push(active);
+        console.log("active",active)
+        console.log("this.permission_routers",this.permission_routers)
       },
       changeNavMenu(url) {
         this.menu = url;
@@ -92,7 +95,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="less">
   .shrink {
     text-align: center;
     .shrinkbutton {

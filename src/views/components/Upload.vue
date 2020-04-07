@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row>
+    <Row>
       <Col :md="6">
         <div style="" class="doc-header">
           <Upload action="//jsonplaceholder.typicode.com/posts/">
@@ -29,8 +29,8 @@
 </pre>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col :md="6">
         <div style="" class="doc-header">
           <Upload
@@ -63,8 +63,8 @@
 </pre>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col :md="6">
         <div style="" class="doc-header">
           <div>
@@ -132,8 +132,8 @@
 </pre>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col :md="6">
         <div style="" class="doc-header">
           <Upload
@@ -141,7 +141,7 @@
             type="drag"
             action="//jsonplaceholder.typicode.com/posts/">
             <div style="padding: 20px 0">
-              <i class="el-icon-platform-eleme"/>
+              <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
               <p>点击或将文件拖拽到这里上传</p>
             </div>
           </Upload>
@@ -177,8 +177,8 @@
 </pre>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col :md="6">
         <div style="" class="doc-header">
           <div>
@@ -186,7 +186,8 @@
               <template v-if="item.status === 'finished'">
                 <img :src="item.url">
                 <div class="demo-upload-list-cover">
-
+                  <Icon type="ios-eye-outline" @click.native="handleView(item.name)"></Icon>
+                  <Icon type="ios-trash-outline" @click.native="handleRemove(item)"></Icon>
                 </div>
               </template>
               <template v-else>
@@ -208,6 +209,7 @@
               action="//jsonplaceholder.typicode.com/posts/"
               style="display: inline-block;width:58px;">
               <div style="width: 58px;height:58px;line-height: 58px;">
+                <Icon type="camera" size="20"></Icon>
               </div>
             </Upload>
             <Modal title="查看图片" v-model="visible">
@@ -397,7 +399,7 @@
 </pre>
         </div>
       </Col>
-    </el-row>
+    </Row>
   </div>
 </template>
 <script>

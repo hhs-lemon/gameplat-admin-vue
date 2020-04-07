@@ -1,48 +1,51 @@
-<style lang="scss">
-    @import '../../../styles/common.scss';
-    @import 'upload.scss';
+<style lang="less">
+    @import '../../../styles/common.less';
+    @import 'upload.less';
 </style>
 
 
 <template>
     <div>
-        <el-row>
+        <Row>
             <Col span="8">
                 <Card>
                     <p slot="title">
+                        <Icon type="ios-cloud-upload-outline"></Icon>
                         基本上传功能
                     </p>
                     <div class="height-120px">
-                        <el-row type="flex" justify="center" align="middle" class="height-100">
+                        <Row type="flex" justify="center" align="middle" class="height-100">
                             <Upload action="//jsonplaceholder.typicode.com/posts/">
                                 <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
                             </Upload>
-                        </el-row>
+                        </Row>
                     </div>
                 </Card>
             </Col>
             <Col span="8" class="padding-left-10">
                 <Card>
                     <p slot="title">
+                        <Icon type="ios-copy-outline"></Icon>
                         可多选的上传
                     </p>
                     <div class="height-120px">
-                        <el-row type="flex" justify="center" align="middle" class="height-100">
+                        <Row type="flex" justify="center" align="middle" class="height-100">
                             <Upload multiple action="//jsonplaceholder.typicode.com/posts/">
                                 <span>多选文件上传&nbsp;&nbsp;</span>
                                 <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
                             </Upload>
-                        </el-row>
+                        </Row>
                     </div>
                 </Card>
             </Col>
             <Col span="8" class="padding-left-10">
                 <Card>
                     <p slot="title">
+                        <Icon type="upload"></Icon>
                         可限制文件类型
                     </p>
                     <div class="height-120px">
-                        <el-row type="flex" justify="center" align="middle" class="height-100">
+                        <Row type="flex" justify="center" align="middle" class="height-100">
                             <Upload
                                 action="//jsonplaceholder.typicode.com/posts/"
                                 :format="['jpg', 'png', 'jpeg', 'gif', 'bmp', 'svg']"
@@ -51,20 +54,21 @@
                                 <span>选择图片上传&nbsp;&nbsp;</span>
                                 <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
                             </Upload>
-                        </el-row>
+                        </Row>
                     </div>
                 </Card>
             </Col>
-        </el-row>
+        </Row>
         <div class="margin-top-10">
             <Col span="8">
                 <div>
                     <Card>
                         <p slot="title">
+                            <Icon type="android-funnel"></Icon>
                             可监听上传各个阶段
                         </p>
                         <div class="height-200px">
-                            <el-row type="flex" justify="center" align="middle" class="height-100">
+                            <Row type="flex" justify="center" align="middle" class="height-100">
                                 <div style="display: block;width: 100%;text-align: center;">
                                     <Upload
                                         action="//jsonplaceholder.typicode.com/posts/"
@@ -78,13 +82,14 @@
                                         <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
                                     </Upload>
                                 </div>
-                            </el-row>
+                            </Row>
                         </div>
                     </Card>
                 </div>
                 <div class="margin-top-10">
                     <Card>
                         <p slot="title">
+                            <Icon type="android-hand"></Icon>
                             可拖拽上传
                         </p>
                         <div class="height-200px">
@@ -93,6 +98,7 @@
                                 type="drag"
                                 action="//jsonplaceholder.typicode.com/posts/">
                                 <div style="padding: 60px 0;height: 200px;">
+                                    <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
                                     <p>点击或将文件拖拽到这里上传</p>
                                 </div>
                             </Upload>
@@ -104,6 +110,7 @@
                 <div class="padding-left-10">
                     <Card>
                         <p slot="title">
+                            <Icon type="ios-analytics"></Icon>
                             综合实例
                         </p>
                         <div class="height-492px">
@@ -124,6 +131,7 @@
                                         action="//jsonplaceholder.typicode.com/posts/"
                                         style="display: inline-block;width:58px;">
                                         <div style="width: 58px;height:58px;line-height: 58px;">
+                                            <Icon type="camera" size="20"></Icon>
                                         </div>
                                     </Upload>
                                     <Modal title="查看图片" v-model="visible">
@@ -138,6 +146,8 @@
                                             <template v-if="item.status === 'finished'">
                                                 <img :src="item.url">
                                                 <div class="admin-upload-list-cover">
+                                                    <Icon type="ios-eye-outline" @click.native="handleView(item.name)"></Icon>
+                                                    <Icon type="ios-trash-outline" @click.native="handleRemove(item)"></Icon>
                                                 </div>
                                             </template>
                                             <template v-else>

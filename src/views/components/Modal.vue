@@ -15,7 +15,7 @@
       <Button @click="modal2 = true">自定义页头和页脚</Button>
       <Modal v-model="modal2" width="360">
         <p slot="header" style="color:#f60;text-align:center">
-          <i class="el-icon-platform-eleme"/>
+          <Icon type="information-circled"></Icon>
           <span>删除确认</span>
         </p>
         <div style="text-align:center">

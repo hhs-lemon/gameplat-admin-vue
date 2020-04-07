@@ -1,20 +1,20 @@
-<style lang="scss">
-    @import './advanced-router.scss';
+<style lang="less">
+    @import './advanced-router.less';
 </style>
 
 <template>
     <div>
-        <el-row>
+        <Row>
             <Card>
                 <p slot="title">
-                  <i class="el-icon-platform-eleme"/>
+                    <Icon type="ios-list"></Icon>
                     购物记录(传递参数)
                 </p>
-                <el-row type="flex" justify="center" align="middle" class="advanced-router">
+                <Row type="flex" justify="center" align="middle" class="advanced-router">
                     <Table :columns="shoppingColumns" :data="shoppingData" style="width: 100%;"></Table>
-                </el-row>
+                </Row>
             </Card>
-        </el-row>
+        </Row>
     </div>
 </template>
 

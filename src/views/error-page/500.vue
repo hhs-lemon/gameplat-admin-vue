@@ -1,5 +1,5 @@
-<style lang="scss">
-    @import './500.scss';
+<style lang="less">
+    @import './500.less';
 </style>
 
 <template>
@@ -7,7 +7,7 @@
         <div class="error500-body-con">
             <Card>
                 <div class="error500-body-con-title">
-                    5<span class="error500-0-span"></span><span class="error500-0-span"></span>
+                    5<span class="error500-0-span"><Icon type="social-freebsd-devil"></Icon></span><span class="error500-0-span"><Icon type="social-freebsd-devil"></Icon></span>
                 </div>
                 <p class="error500-body-con-message">Oops! the server is wrong</p>
                 <div class="error500-btn-con">

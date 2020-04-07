@@ -1,92 +1,110 @@
-<style rel="stylesheet/scss" lang="scss">
-  @import "./home.scss";
-  @import "../../styles/common.scss";
+<style rel="stylesheet/less" lang="less">
+  @import "./home.less";
+  @import "../../styles/common.less";
 </style>
 <template>
   <div class="home-main">
-    <el-row :gutter="10">
-      <el-col :md="24" :lg="24">
-        <el-row class-name="home-page-row1" :gutter="10">
+    <Row :gutter="10">
+      <Col :md="24" :lg="24">
+        <Row class-name="home-page-row1" :gutter="10">
           <!--用户-->
-          <el-col :md="12" :lg="12" :style="{marginBottom: '10px'}">
-            <el-card>
-              <el-row type="flex" class="user-infor">
-                <el-col :span="6">
-                  <el-row class-name="made-child-con-middle" type="flex" align="middle">
+          <Col :md="12" :lg="12" :style="{marginBottom: '10px'}">
+            <Card>
+              <Row type="flex" class="user-infor">
+                <Col span="8">
+                  <Row class-name="made-child-con-middle" type="flex" align="middle">
                     <img class="avator-img" :src="avatorPath" style="background: #2db7f5;margin-left: 10px;"/>
-                  </el-row>
-                </el-col>
-                <el-col :span="12" style="padding-left:6px;">
-                  <el-row class-name="made-child-con-middle" type="flex" align="middle">
+                  </Row>
+                </Col>
+                <Col span="16" style="padding-left:6px;">
+                  <Row class-name="made-child-con-middle" type="flex" align="middle">
                     <div>
                       <b class="card-user-infor-name">admin</b>
                       <p>super admin</p>
                     </div>
-                  </el-row>
-                </el-col>
-              </el-row>
+                  </Row>
+                </Col>
+              </Row>
               <div class="line-gray"></div>
-              <el-row class="margin-top-8">
-                <el-col :span="6"><p class="notwrap">上次登录时间:</p></el-col>
-                <el-col :span="12" class="padding-left-8">2017.09.12-13:32:20</el-col>
-              </el-row>
-              <el-row class="margin-top-8">
-                <el-col :span="6"><p class="notwrap">上次登录地点:</p></el-col>
-                <el-col :span="12" class="padding-left-8">北京</el-col>
-              </el-row>
-            </el-card>
-          </el-col>
+              <Row class="margin-top-8">
+                <Col span="8"><p class="notwrap">上次登录时间:</p></Col>
+                <Col span="16" class="padding-left-8">2017.09.12-13:32:20</Col>
+              </Row>
+              <Row class="margin-top-8">
+                <Col span="8"><p class="notwrap">上次登录地点:</p></Col>
+                <Col span="16" class="padding-left-8">北京</Col>
+              </Row>
+            </Card>
+          </Col>
           <!--待办事务-->
-          <el-col :md="12" :lg="12" :style="{marginBottom: '10px'}">
-            <el-card>
+          <Col :md="12" :lg="12" :style="{marginBottom: '10px'}">
+            <Card>
               <p slot="title" class="card-title">
+                <Icon type="android-checkbox-outline"></Icon>
                 待办事项
               </p>
               <a type="text" slot="extra" @click.prevent="addNewToDoItem">
+                <Icon type="plus-round"></Icon>
               </a>
+              <Modal
+                v-model="showAddNewTodo"
+                title="添加新的待办事项"
+                @on-ok="addNew"
+                @on-cancel="cancelAdd">
+                <Row type="flex" justify="center">
+                  <Input v-model="newToDoItemValue" icon="compose" placeholder="请输入..." style="width: 300px"/>
+                </Row>
+                <Row slot="footer">
+                  <Button type="text" @click="cancelAdd">取消</Button>
+                  <Button type="primary" @click="addNew">确定</Button>
+                </Row>
+              </Modal>
               <div class="to-do-list-con">
                 <div v-for="(item, index) in toDoList" :key="'todo-item' + (toDoList.length - index)"
                      class="to-do-item">
-                  <to-do-list-item :content="item.title"/>
+                  <to-do-list-item :content="item.title"></to-do-list-item>
                 </div>
               </div>
-            </el-card>
-          </el-col>
-        </el-row>
-      </el-col>
-    </el-row>
-    <el-row :gutter="10" class="margin-top-10">
-      <el-col :md="24" :lg="12" :style="{marginBottom: '10px'}">
-        <el-card>
+            </Card>
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+    <Row :gutter="10" class="margin-top-10">
+      <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
+        <Card>
           <p slot="title" class="card-title">
+            <Icon type="android-map"></Icon>
             上周每日来访量统计
           </p>
           <div class="data-source-row">
-            <visite-volume/>
+            <visite-volume></visite-volume>
           </div>
-        </el-card>
-      </el-col>
-      <el-col :md="24" :lg="12" :style="{marginBottom: '10px'}">
-        <el-card>
+        </Card>
+      </Col>
+      <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
+        <Card>
           <p slot="title" class="card-title">
+            <Icon type="ios-pulse-strong"></Icon>
             数据来源统计
           </p>
           <div class="data-source-row">
-            <data-source-pie/>
+            <data-source-pie></data-source-pie>
           </div>
-        </el-card>
-      </el-col>
-    </el-row>
-    <el-row class="margin-top-10">
-      <el-card>
+        </Card>
+      </Col>
+    </Row>
+    <Row class="margin-top-10">
+      <Card>
         <p slot="title" class="card-title">
+          <Icon type="ios-shuffle-strong"></Icon>
           上周每日服务调用量(万)
         </p>
         <div class="line-chart-con">
-          <service-requests/>
+          <service-requests></service-requests>
         </div>
-      </el-card>
-    </el-row>
+      </Card>
+    </Row>
   </div>
 </template>
 

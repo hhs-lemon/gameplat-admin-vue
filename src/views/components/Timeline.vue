@@ -36,7 +36,7 @@ margin-top: 10px
 </style>
 <template>
   <div style="margin-top: 20px;margin-left: 10px;">
-    <el-row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Timeline>
@@ -67,8 +67,8 @@ margin-top: 10px
           <p>最简单定义一个时间轴的用法。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Timeline>
@@ -84,7 +84,7 @@ margin-top: 10px
             用各种颜色来标识不同状态，可以使用green、red、blue或自定义的颜色，默认是 blue 。</p>
         </div>
       </Col>
-    </el-row>
+    </Row>
   </div>
 </template>
 <script>

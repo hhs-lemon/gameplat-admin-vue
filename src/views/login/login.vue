@@ -2,20 +2,34 @@
   <div id="particles">
     <div class="login" @keydown.enter="handleSubmit">
       <div class="login-con">
-        <form name = 'loginForm' action="">
-          <el-input class="el-form-item is-required" placeholder="账号" v-model="userName"
-                    clearable>
-            <i class="el-icon-user-solid el-input__icon"
-               slot="prefix"/>
-          </el-input>
-          <el-input class="el-form-item is-required" placeholder="密码" v-model="password" show-password>
-            <i class="el-icon-unlock el-input__icon"
-               slot="prefix"/>
-          </el-input>
-          <el-row class="el-form-item">
-            <el-button type="primary" @click.native.prevent='handleSubmit' style="width: 100%"><i class="el-icon-s-unfold "/>&nbsp;&nbsp;登&nbsp;录</el-button>
-          </el-row>
-        </form>
+        <Card :bordered="false">
+          <p slot="title">
+            <Icon type="log-in"></Icon>
+            欢迎登录
+          </p>
+          <div class="form-con">
+            <Form ref="loginForm" :model="form" :rules="rules">
+              <FormItem prop="userName">
+                <Input v-model="form.userName" placeholder="请输入用户名">
+                <span slot="prepend">
+                    <Icon :size="16" type="person"></Icon>
+                  </span>
+                </Input>
+              </FormItem>
+              <FormItem prop="password">
+                <Input type="password" v-model="form.password" placeholder="请输入密码">
+                <span slot="prepend">
+                    <Icon :size="14" type="locked"></Icon>
+                  </span>
+                </Input>
+              </FormItem>
+              <FormItem>
+                <Button @click="handleSubmit" type="primary" long>登录</Button>
+              </FormItem>
+            </Form>
+            <p class="login-tip">密码:123456</p>
+          </div>
+        </Card>
       </div>
     </div>
   </div>
@@ -30,8 +44,10 @@
     },
     data () {
       return {
-        userName: 'admin',
-        password: '',
+        form: {
+          userName: 'admin',
+          password: ''
+        },
         rules: {
           userName: [
             {required: true, message: '账号不能为空', trigger: 'blur'}
@@ -44,21 +60,29 @@
     },
     methods: {
       handleSubmit () {
-        let userInfo = {
-          userName: 'admin',
-          password: '123456',
-        };
-        Cookies.set('userInfo', userInfo);
-        this.$store.commit('setUserInfo', userInfo);
-        //设置收缩栏默认为展开
-        this.$store.state.app.sidebar = false;
-        //跳转到首页
-        this.$router.push("/");
+        this.$refs.loginForm.validate((valid) => {
+          if (valid) {
+            if (this.form.password !== "123456") {
+              this.$Message.error('密码错误');
+              return
+            }
+            let userInfo = {
+              userName: this.form.userName,
+              password: this.form.password,
+            };
+            Cookies.set('userInfo', userInfo);
+            this.$store.commit('setUserInfo', userInfo);
+            //设置收缩栏默认为展开
+            this.$store.state.app.sidebar = false;
+            //跳转到首页
+            this.$router.push("/");
+          }
+        });
       }
     },
   }
 </script>
-<style lang="scss">
+<style lang="less">
   canvas{
     display:block;
     vertical-align:bottom;

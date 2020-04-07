@@ -1,20 +1,20 @@
-<style lang="scss">
-  @import './styles/to-do-list-item.scss';
+<style lang="less">
+  @import './styles/to-do-list-item.less';
 </style>
 
 <template>
-  <el-row class="to-do-list-item">
-    <el-col :span="2" class="height-100">
-      <el-row type="flex" justify="center" align="middle" class="height-100">
-        <el-checkbox v-model="todoitem"/>
-      </el-row>
-    </el-col>
-    <el-col :span="22" class="height-100">
-      <el-row type="flex" justify="start" align="middle" class="height-100">
+  <Row class="to-do-list-item">
+    <Col span="2" class="height-100">
+      <Row type="flex" justify="center" align="middle" class="height-100">
+        <Checkbox v-model="todoitem"></Checkbox>
+      </Row>
+    </Col>
+    <Col span="22" class="height-100">
+      <Row type="flex" justify="start" align="middle" class="height-100">
         <p class="to-do-list-item-text" @click="handleHasDid" :class="{hasDid: todoitem}">{{ content }}</p>
-      </el-row>
-    </el-col>
-  </el-row>
+      </Row>
+    </Col>
+  </Row>
 </template>
 
 <script>

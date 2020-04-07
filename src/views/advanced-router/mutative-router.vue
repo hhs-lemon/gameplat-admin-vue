@@ -1,22 +1,22 @@
-<style lang="scss">
-    @import './advanced-router.scss';
+<style lang="less">
+    @import './advanced-router.less';
 </style>
 
 <template>
     <div>
-        <el-row>
+        <Row>
             <Col span="24">
                 <Card>
                     <p slot="title">
-                      <i class="el-icon-platform-eleme"/>
+                        <Icon type="ios-list"></Icon>
                         订单详情(动态路由)
                     </p>
-                    <el-row type="flex" justify="center" align="middle" class="advanced-router">
+                    <Row type="flex" justify="center" align="middle" class="advanced-router">
                         <Table :columns="orderColumns" :data="orderData" style="width: 100%;"></Table>
-                    </el-row>
+                    </Row>
                 </Card>
             </Col>
-        </el-row>
+        </Row>
     </div>
 </template>
 

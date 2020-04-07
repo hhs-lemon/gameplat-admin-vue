@@ -1,7 +1,7 @@
 <template>
   <div class="screenfull">
     <div class="full-screen-btn-con" @click="click">
-      <i class="el-icon-platform-eleme"/>
+      <Icon :type="isFullscreen?'arrow-shrink':'arrow-expand'" :size="23"></Icon>
     </div>
   </div>
 
@@ -31,7 +31,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="less">
   .screenfull {
     display: inline-block;
     width: 20px;

@@ -1,5 +1,5 @@
-<style lang="scss">
-    @import './editable-table.scss';
+<style lang="less">
+    @import './editable-table.less';
 </style>
 
 <template>

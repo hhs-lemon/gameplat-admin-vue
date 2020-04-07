@@ -2,33 +2,31 @@
   <div ref="scrollCon" @DOMMouseScroll="handlescroll" @mousewheel="handlescroll" class="tags-outer-scroll-con">
     <div class="close-all-tag-con">
       <a name="clearAll">清理</a>
-      <el-dropdown transfer @on-click="handleTagsOption">
-        <el-dropdown-menu><el-button size="small" type="primary">
+      <Dropdown transfer @on-click="handleTagsOption">
+        <Button size="small" type="primary">
           标签选项
-        </el-button>
-        </el-dropdown-menu>
-        <el-dropdown-menu slot="list">
-          <el-dropdown-menu name="clearAll1">关闭所有</el-dropdown-menu>
-          <el-dropdown-menu name="clearOthers">关闭其他</el-dropdown-menu>
-        </el-dropdown-menu>
-      </el-dropdown>
+          <Icon type="arrow-down-b"></Icon>
+        </Button>
+        <DropdownMenu slot="list">
+          <DropdownItem name="clearAll1">关闭所有</DropdownItem>
+          <DropdownItem name="clearOthers">关闭其他</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </div>
     <div ref="scrollBody" class="tags-inner-scroll-body" :style="{left: tagBodyLeft + 'px'}">
       <transition-group name="taglist-moving-animation">
-        <el-tag
-          style="cursor: pointer;"
+        <Tag
           type="dot"
           v-for="(item, index) in pageTagsList"
           ref="tagsPageOpened"
           :key="item.name"
           :name="item.name"
           @on-close="closePage"
-          :closable="item.name==='home_index'?false:true"
           @click.native="linkTo(item)"
-          @close="handleClose(tag)"
-          :effect="item.children?(item.children[0].name===currentPageName?'dark':'plain'):(item.name===currentPageName?'dark':'plain')"
+          :closable="item.name==='home_index'?false:true"
+          :color="item.children?(item.children[0].name===currentPageName?'blue':'default'):(item.name===currentPageName?'blue':'default')"
         >{{ itemTitle(item) }}
-        </el-tag>
+        </Tag>
       </transition-group>
     </div>
   </div>
@@ -41,8 +39,8 @@
       return {
         currentPageName: this.$route.name,
         tagBodyLeft: 0,
-        inputVisible: false,
-        inputValue: ''
+        refsTag: [],
+        tagsCount: 1
       };
     },
     props: {
@@ -63,9 +61,6 @@
       }
     },
     methods: {
-      handleClose(tag) {
-        this.pageTagsList.splice(this.pageTagsList.indexOf(tag), 1);
-      },
       itemTitle(item) {
         if (typeof item.title === 'object') {
           return this.$t(item.title.i18n);
@@ -214,10 +209,3 @@
     }
   };
 </script>
-
-<style lang="scss">
-  .el-tag+.el-tag {
-    margin-left: 10px;
-  }
-</style>
-

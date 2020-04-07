@@ -4,12 +4,15 @@
       <Table :columns="columns8" :data="data7" size="small" ref="table"></Table>
       <br>
       <Button type="primary" size="large" @click="exportData(1)">
+        <Icon type="ios-download-outline"></Icon>
         导出原始数据
       </Button>
       <Button type="primary" size="large" @click="exportData(2)">
+        <Icon type="ios-download-outline"></Icon>
         导出排序和过滤后的数据
       </Button>
       <Button type="primary" size="large" @click="exportData(3)">
+        <Icon type="ios-download-outline"></Icon>
         导出自定义数据
       </Button>
     </div>
@@ -290,5 +293,5 @@
   }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/less" lang="less">
 </style>

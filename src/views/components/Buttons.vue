@@ -1,6 +1,6 @@
 <template>
   <div class="animated fadeIn">
-    <el-row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Button>Default</Button>
@@ -20,8 +20,8 @@
           <p>通过设置type为primary、ghost、dashed、text、info、success、warning、error创建不同样式的按钮，不设置为默认样式。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Button type="primary" shape="circle" icon="ios-search"></Button>
@@ -41,8 +41,8 @@
           <p>通过设置shape属性为circle，可将按钮置为圆的形状。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Button type="primary" size="large">Large</Button>
@@ -59,8 +59,8 @@
           <p>通过设置size为large和small将按钮设置为大和小尺寸，不设置为默认（中）尺寸。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Button type="success" long>确认提交</Button>
@@ -73,8 +73,8 @@
           <p>使用者也可以直接通过给组件添加 style 来设置更细节的样式，比如定宽</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Button>Default</Button>
@@ -97,8 +97,8 @@
           <p>通过添加disabled属性可将按钮设置为不可用状态。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Button type="primary" loading>Loading...</Button>
@@ -116,8 +116,8 @@
           <p>通过添加loading属性可以让按钮处于加载中状态，后两个按钮在点击时进入加载状态</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <h4>基本</h4>
@@ -141,12 +141,12 @@
           <br><br>
           <Button-group>
             <Button type="primary">
-              <i class="el-icon-platform-eleme"/>
+              <Icon type="chevron-left"></Icon>
               前进
             </Button>
             <Button type="primary">
               后退
-              <i class="el-icon-platform-eleme"/>
+              <Icon type="chevron-right"></Icon>
             </Button>
           </Button-group>
           <Button-group>
@@ -164,12 +164,12 @@
           <br><br>
           <Button-group shape="circle">
             <Button type="primary">
-              <i class="el-icon-platform-eleme"/>
+              <Icon type="chevron-left"></Icon>
               前进
             </Button>
             <Button type="primary">
               后退
-              <i class="el-icon-platform-eleme"/>
+              <Icon type="chevron-right"></Icon>
             </Button>
           </Button-group>
           <Button-group shape="circle">
@@ -218,7 +218,7 @@
           <p>通过设置ButtonGroup的属性shape为circle，可将按钮组形状设置为圆角。</p>
         </div>
       </Col>
-    </el-row>
+    </Row>
   </div>
 </template>
 <script>

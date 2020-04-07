@@ -1,11 +1,57 @@
-<style lang="scss">
-    @import '../../styles/common.scss';
-    @import './components/table.scss';
+<style lang="less">
+    @import '../../styles/common.less';
+    @import './components/table.less';
 </style>
 
 <template>
-     <div>
-       test
+    <div>
+        <Row :gutter="10">
+            <Col span="8">
+                <Card>
+                    <p slot="title">
+                        <Icon type="pinpoint"></Icon>
+                        一个条件搜索
+                    </p>
+                    <Row>
+                        <Input v-model="searchConName1" icon="search" @on-change="handleSearch1" placeholder="请输入姓名搜索..." style="width: 200px" />
+                    </Row>
+                    <Row class="margin-top-10 searchable-table-con1">
+                        <Table :columns="columns1" :data="data1"></Table>
+                    </Row>
+                </Card>
+            </Col>
+            <Col span="8">
+                <Card>
+                    <p slot="title">
+                        <Icon type="help-buoy"></Icon>
+                        多个条件搜索
+                    </p>
+                    <Row>
+                        <Input v-model="searchConName2" @on-change="handleSearch2" icon="search" placeholder="请输入姓名搜搜..." style="width: 200px" />
+                        <Input v-model="searchConTel2" @on-change="handleSearch2" icon="search" placeholder="请输入手机号搜搜..." style="width: 200px" />
+                    </Row>
+                    <Row class="margin-top-10 searchable-table-con1">
+                        <Table :columns="columns1" :data="data2"></Table>
+                    </Row>
+                </Card>
+            </Col>
+            <Col span="8">
+                <Card>
+                    <p slot="title">
+                        <Icon type="mouse"></Icon>
+                        点击搜索进行搜索
+                    </p>
+                    <Row>
+                        <Input v-model="searchConName3" placeholder="请输入姓名搜搜..." style="width: 200px" />
+                        <span @click="handleSearch3" style="margin: 0 10px;"><Button type="primary" icon="search">搜索</Button></span>
+                        <Button @click="handleCancel3" type="ghost" >取消</Button>
+                    </Row>
+                    <Row class="margin-top-10 searchable-table-con1">
+                        <Table :columns="columns1" :data="data3"></Table>
+                    </Row>
+                </Card>
+            </Col>
+        </Row>
     </div>
 </template>
 

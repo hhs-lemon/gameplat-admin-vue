@@ -1,5 +1,6 @@
-@import '~element-ui/lib/theme-chalk/index.css';
+@import '~iview/src/styles/index.less';
 
+@primary-color: #2db7f5;
 html, body {
   width: 100%;
   height: 100%;
@@ -15,7 +16,7 @@ html, body {
 .lock-screen-back {
   border-radius: 50%;
   z-index: -1;
-  box-shadow: 0 0 0 0 inset;
+  box-shadow: 0 0 0 0 @primary-color inset;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -236,7 +237,7 @@ html, body {
     transition: left .3s;
     .single-page {
       margin: 10px;
-      min-height: ("calc(100vh - 150px)");
+      min-height: e("calc(100vh - 150px)");
     }
     .bottom-pages {
       text-align: center;

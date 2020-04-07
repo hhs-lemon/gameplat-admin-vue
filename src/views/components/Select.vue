@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Select v-model="model1" style="width:200px">
@@ -15,8 +15,8 @@
           <p>在展开选择器后，可以使用键盘的up和down快速上下选择，按下Enter选择，按下Esc收起选择器。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Select v-model="model8" clearable style="width:200px">
@@ -28,8 +28,8 @@
           <p>通过设置属性clearable可以清空已选项，仅适用于单选模式。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Select v-model="model7" style="width:200px">
@@ -46,8 +46,8 @@
           <p>使用Option-group可将选项进行分</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Select v-model="model10" multiple style="width:260px">
@@ -59,8 +59,8 @@
           <p>通过设置属性multiple可以开启多选模式。多选模式下，model 接受数组类型的数据，所返回的也是数组。</p>
         </div>
       </Col>
-    </el-row>
-    <el-row>
+    </Row>
+    <Row>
       <Col span="24">
         <div style="" class="doc-header">
           <Select v-model="model11" filterable>
@@ -75,7 +75,7 @@
           <p>通过设置属性filterable可以开启搜索模式。单选和多选都支持搜索模式。多选搜索时，可以使用键盘Delete快捷删除最后一个已选项。</p>
         </div>
       </Col>
-    </el-row>
+    </Row>
   </div>
 </template>
 <script>

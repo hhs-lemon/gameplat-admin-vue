@@ -1,22 +1,25 @@
 <template>
   <div class="animated fadeIn">
-    <el-row>
+    <Row>
       <Col span="24">
         <div class="doc-header">
           <Card style="width:350px">
             <p slot="title">
-              <i class="el-icon-platform-eleme"/>
+              <Icon type="ios-film-outline"></Icon>
               经典电影
             </p>
             <a href="#" slot="extra" @click.prevent="changeLimit">
-              <i class="el-icon-platform-eleme"/>
+              <Icon type="ios-loop-strong"></Icon>
               换一换
             </a>
             <ul>
               <li v-for="item in randomMovieList">
                 <a :href="item.url" target="_blank">{{ item.name }}</a>
                 <span>
-                    <i class="el-icon-platform-eleme"/>
+                    <Icon type="ios-star" v-for="n in 4" :key="n" color="#ffac2d"></Icon><Icon type="ios-star"
+                                                                                               v-if="item.rate >= 9.5"
+                                                                                               color="#ffac2d"></Icon><Icon
+                  type="ios-star-half" v-else color="#ffac2d"></Icon>
                     {{ item.rate }}
                 </span>
               </li>
@@ -28,7 +31,7 @@
           <p>自定义标题、额外操作和主体内容，可以完全自由控制各个部分，也可以结合其它组件一起使用，较为灵活。</p>
         </div>
       </Col>
-    </el-row>
+    </Row>
   </div>
 </template>
 

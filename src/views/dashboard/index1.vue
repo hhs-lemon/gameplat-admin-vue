@@ -1,12 +1,13 @@
 <template>
   <div class="dashboard-container">
     <!--一-->
-    <el-row :gutter="16" style="margin-top:20px">
+    <Row :gutter="16" style="margin-top:20px">
       <Col :xs="24" :sm="12" :md="12" :lg="12">
         <div class="state-overview">
           <Col span="12">
             <div class="panel purple">
               <div class="symbol">
+                <Icon type="clipboard" size="50" color="white"></Icon>
               </div>
               <div class="state-value">
                 <div class="value">
@@ -21,6 +22,7 @@
           <Col span="12">
             <div class="panel red">
               <div class="symbol">
+                <Icon type="pricetags" size="50" color="white"></Icon>
               </div>
               <div class="state-value">
                 <div class="value">
@@ -37,6 +39,7 @@
           <Col span="12">
             <div class="panel blue">
               <div class="symbol">
+                <Icon type="cash" size="40" color="white"></Icon>
               </div>
               <div class="state-value">
                 <div class="value">
@@ -51,6 +54,7 @@
           <Col span="12">
             <div class="panel green">
               <div class="symbol">
+                <Icon type="eye" size="50" color="white"></Icon>
 
               </div>
               <div class="state-value">
@@ -70,7 +74,7 @@
           <dash-chart-visitor></dash-chart-visitor>
         </div>
       </Col>
-    </el-row>
+    </Row>
 
   </div>
 </template>
