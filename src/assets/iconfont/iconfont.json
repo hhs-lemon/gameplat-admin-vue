@@ -1,0 +1,37 @@
+{
+  "id": "1738759",
+  "name": "gamePlay-element-admin",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "s3.5",
+  "glyphs": [
+    {
+      "icon_id": "5397865",
+      "name": "star",
+      "font_class": "star",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "13519559",
+      "name": "refresh",
+      "font_class": "refresh",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "250843",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "3138204",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    }
+  ]
+}

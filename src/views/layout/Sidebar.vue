@@ -14,7 +14,8 @@
         <template v-for="child in item.children">
           <!--设置下面的二级菜单显示-->
           <MenuItem :name="item.path+'/'+child.path" :key="child.name">
-            <Icon :type="child.icon" :size="iconSize" :key="child.name"></Icon>
+            <!--<Icon :type="child.icon" :size="iconSize" :key="child.name"></Icon>-->
+            <i class="iconfont iconstar"></i>
             <span class="layout-text" :key="child.name">{{ child.title }}</span>
           </MenuItem>
         </template>

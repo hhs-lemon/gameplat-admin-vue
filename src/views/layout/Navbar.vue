@@ -10,7 +10,7 @@
             type="text"
             @click="toggleSideBar"
           >
-            <Icon type="navicon" size="32"></Icon>
+            <i class="iconfont iconmenu" style="font-size: 24px;color: #ccc"></i>
           </Button>
         </div>
         <breadcrumbNav />
